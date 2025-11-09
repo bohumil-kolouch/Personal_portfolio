@@ -27,7 +27,7 @@ h1 {
     text-transform: uppercase; /*capitalizing all h1 headings */
     font-family: "Trebuchet MS", Optima; /* Sets the font family of all h1 headings */
     text-align: center; /* Centering all h1 elements */
-    margin-top: 3%; /* Adds a small margin above h1 elements */
+    margin-top: 4%; /* Adds a small margin above h1 elements */
     color: #1a1a1a; 
 }
 
@@ -131,7 +131,7 @@ footer {
     padding: .75vw 1vw; /* This adds padding around our text */
     text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
     font-family: Avant Garde, Helvetica; /* This specifies the font family for text on our navbar */
-    font-size: 1.5vw; /* This specifies the font size for text on our navbar */
+    font-size: 1.3vw; /* This specifies the font size for text on our navbar */
     text-align: center; /* This centers the text within its container */
     position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
     -webkit-animation: moveNavText 5.75s; /* Animation for Safari 4.0 - 8.0 */
@@ -155,7 +155,7 @@ footer {
 
 /* Navbar home button */
 .Navbar a.active { /* This targets the a element on the navbar with the "active" class */
-    background-color: darkgray;
+    background-color:rgb(149, 148, 148); /* This colors the home button a different color to distinguish it from the other buttons */
 }
 /***** End of Navbar Styling *****/
 
@@ -198,6 +198,10 @@ footer {
 /***** Slideshow Styling *****/
 #Slideshow_Background {
     background: rgba(255, 255, 255, 0.35); /* This creates a slightly transparent white background that's palced over the video in the background */    
+    min-height: 100vh;
+    
+    align-items: center;
+    justify-content: center;
 }
 
 .mySlides{
@@ -208,7 +212,7 @@ footer {
 #Slideshow_Container {
     width: 39.5vw; /* Relative sizing of the container for the slidewshow set to 39.5% of the viewport width */
     height: auto; /* The height of the container is automatically adjusted based on the content it is displaying */
-    padding-top: 4%; /* Adds a small padding to the top of the slideshow container */
+    padding-top: 8%; /* Adds a small padding to the top of the slideshow container */
     position: relative; /* This sets the container relative to its normal positioning */
     margin:auto; /* This will horizontally center the container on the page */
 }
@@ -218,12 +222,15 @@ footer {
     text-decoration: none;
 }
 
-/* Images contained within the slideshow */
 .Slideshow_Images {
-    vertical-align: middle; /* This centers the images vertically within the slideshow container */
-    height: auto; /* The height of the images is automatically adjusted based on the content, ie if your images are different sizes, they will display as different sizes */
-    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75); /* Adds a shadow around the slideshow images */
-    width: 100%; /* The width of the images is automatically adjusted based on the content */
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    background-color: #000;
+    padding: 10px 0; /* small top and bottom gap */
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
 }
 
 /* Next and previous buttons */
@@ -341,11 +348,12 @@ footer {
     position: fixed; /* The element is positioned relative to the viewport and stays in the same location no matter what */
     bottom: 1.75vw; /* Positions the button slightly up from the bottom of the viewport */
     right: 1.75vw; /* Positions the viewport slightly right from the side of the viewport */
-    width: 25vw; /* Sets the width relative to the viewport width */
-    background-color: white; /* Sets the background color of the button to white */
+    width: 15vw; /* Sets the width relative to the viewport width */
+    background-color: rgb(149, 148, 148); /* Sets the background color of the button to white */
     color: black; /* Sets the color of the button text to black */
-    border: solid black; /* This makes a solid black border around the button */
+    border: none /* This makes a solid black border around the button */
     cursor: pointer; /* This changes the cursor when hovered over the button to a pointer */
+    transition: bottom 0.7s ease, opacity 0.5s ease;
     -webkit-animation: movePopup 5s; /* Animation for 5 seconds for Safari 4.0-8.0 */
     animation: movePopup 5s; /* Animation set for 5 seconds */
 }

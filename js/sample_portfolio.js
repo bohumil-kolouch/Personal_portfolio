@@ -45,3 +45,24 @@ document.addEventListener("click", function(event){
         closeForm()
     }
 }, false )
+
+// Move the CONTACT button up as the user scrolls
+window.addEventListener("scroll", function() {
+    const button = document.querySelector(".Pop_Up_Button");
+    const scrollY = window.scrollY;
+    const maxMove = 400; // how far up the button can move
+    const startFade = 100; // when it starts to fade out
+
+    if (button) {
+        // Move up gradually but stop after a certain point
+        const move = Math.min(scrollY * 0.9, maxMove);
+        button.style.bottom = `${0.75 + move / 10}vw`;
+
+        // Fade out when scrolled far enough
+        if (scrollY > startFade) {
+            button.style.opacity = Math.max(1 - (scrollY - startFade) / 400, 0);
+        } else {
+            button.style.opacity = 1;
+        }
+    }
+});
