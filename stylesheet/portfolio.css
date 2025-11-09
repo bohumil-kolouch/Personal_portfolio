@@ -14,6 +14,7 @@ body {
     font-family: Avant Garde, Helvetica;
     font-size: 1.5vw; 
     overflow-x: hidden; /* This prevents the horizontal scroll bar from appearing when the quote is hovered over */
+    -webkit-user-select: none;
     user-select: none; /* This prevents the text on the webpage from being highlighted by the user */
 }
 
@@ -244,6 +245,7 @@ footer {
     font-weight: bold;
     font-size: 1.5vw;
     border-radius: 0 3px 3px 0; /* Adds a slightly rounded border on the top and bottom right corners */
+    -webkit-user-select: none;
     user-select: none; /* This property makes it so that the user cannot highlight the text */
     transition: 0.6s ease; /* This specifies the details of the hover transition for these elements */
 }
@@ -289,6 +291,10 @@ footer {
     z-index: 1; /* This ensures the dots will be displayed above any other elements */
 }
 
+.slideshow-dots {
+    text-align: center;
+}
+
 /* Hover effect for slideshow dots */
 .active, .dot:hover {
     background-color: black; /* Sets the color of the dots when active or hovered over */
@@ -296,10 +302,10 @@ footer {
 
 /* Fading animation for slideshow */
 .fade {
-    animation-name: fade; /* Fade animation is defined below */
-    animation-duration: 1.5s; /* The animation lasts 1.5 seconds */
     -webkit-animation-name: fade; /* Same as above for Safari 4.0-8.0 */
     -webkit-animation-duration: 1.5s;
+    animation-name: fade; /* Fade animation is defined below */
+    animation-duration: 1.5s; /* The animation lasts 1.5 seconds */
 }
 
 @-webkit-keyframes fade {
@@ -351,7 +357,7 @@ footer {
     width: 15vw; /* Sets the width relative to the viewport width */
     background-color: rgb(149, 148, 148); /* Sets the background color of the button to white */
     color: black; /* Sets the color of the button text to black */
-    border: none /* This makes a solid black border around the button */
+    border: none; /* This makes a solid black border around the button */
     cursor: pointer; /* This changes the cursor when hovered over the button to a pointer */
     transition: bottom 0.7s ease, opacity 0.5s ease;
     -webkit-animation: movePopup 5s; /* Animation for 5 seconds for Safari 4.0-8.0 */
@@ -411,8 +417,8 @@ button {
 button:hover, .form-container .btn:hover {
     color: white; /* This makes the text in the buttons white when hovered over */
     background-color: black; /* The background of the button changes to black when hovered over */
-    transition-duration: 1s; /* This makes the transition last 1 second */
     -webkit-transition-duration: 1s; /* For Safari 4.0-8.0 */
+    transition-duration: 1s; /* This makes the transition last 1 second */
     border-color: silver; /* The border turns silver when the button is hovered over */
 }
 
@@ -435,8 +441,8 @@ button:hover, .form-container .btn:hover {
 .form-container .cancel:hover {
     color: white;
     background-color: darkred;
-    transition-duration: 1s;
     -webkit-transition-duration: 1s;
+    transition-duration: 1s;
     border-color: black;
 }
 /***** End of Contact Form Styling *****/
