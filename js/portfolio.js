@@ -66,3 +66,9 @@ window.addEventListener("scroll", function() {
         }
     }
 });
+
+// Expose functions for inline HTML event handlers
+window.openForm = openForm;
+window.closeForm = closeForm;
+window.plusSlides = plusSlides;
+window.currentSlide = currentSlide;
